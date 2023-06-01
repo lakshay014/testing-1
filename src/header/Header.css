@@ -1,0 +1,40 @@
+.container {
+  margin: 0%;
+  padding: 50px 30px;
+  text-align: center;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 25px;
+  background-color: rgb(215, 239, 246);
+  min-height: 4vh;
+}
+
+.left {
+  display: flex;
+  width: 100%;
+
+  /* background-color: rgb(19, 88, 65); */
+}
+.headerlogo {
+  display: flex;
+  /* background-color: palegreen; */
+  width: min-content;
+  height: 100px;
+}
+
+.heading {
+  margin: 0 auto;
+  max-width: 500px;
+  color: #000;
+  font-size: 2.1rem;
+  line-height: 4.1rem;
+  font-weight: bold;
+  letter-spacing: 0.1px;
+  /* background-color: palegreen; */
+}
+
+.right img {
+  width: 400px;
+}

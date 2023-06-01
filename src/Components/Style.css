@@ -1,0 +1,126 @@
+/* .containeer {
+  display: flex;
+  margin: 5%;
+  border: 2px solid black;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+}
+
+table {
+  text-align: center;
+}
+
+#left {
+  text-align: left;
+  margin-left: 4%;
+}
+
+.center {
+  margin-left: 15%;
+}
+
+.inputDate {
+  margin: 0.1vw;
+  width: 10vw;
+  padding: 0.22vw;
+  background-color: rgb(215, 239, 246);
+  border-radius: 30vw;
+}
+.inputname {
+  margin: 0.1vw;
+  width: 20vw;
+  padding: 0.22vw;
+  background-color: rgb(215, 239, 246);
+  border-radius: 30vw;
+}
+.inputdata {
+  margin: 2vw;
+  margin-right: 0%;
+  border: 2px solid white;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+  width: 50%;
+  padding: 1vw;
+}
+.letterdata {
+  margin: 2vw;
+  border: 2px solid white;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+  width: 50%;
+}
+.allinput {
+  margin: 2vw;
+} */
+
+.containeer {
+  display: flex;
+  margin: 5%;
+  border: 2px solid black;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+}
+
+table {
+  /* text-align: center; */
+}
+
+#left {
+  text-align: left;
+  margin-left: 4%;
+}
+
+.center {
+  margin-left: 2vw;
+  width: 35vw;
+}
+.centerheading {
+  text-align: center;
+}
+.letterinput {
+  margin: 2vw;
+}
+.inputDate {
+  margin: 0.1vw;
+  width: 10vw;
+  padding: 0.22vw;
+  background-color: rgb(215, 239, 246);
+  border-radius: 30vw;
+}
+.inputname {
+  margin: 0.1vw;
+  width: 20vw;
+  padding: 0.22vw;
+  background-color: rgb(215, 239, 246);
+  border-radius: 30vw;
+}
+.inputloantype {
+  width: 30vw;
+  background-color: rgb(215, 239, 246);
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+  border: 1.3px solid;
+}
+
+.inputdata {
+  margin: 2vw;
+  margin-right: 0%;
+  border: 2px solid white;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+  width: 50%;
+  padding: 1vw;
+}
+.letterdata {
+  margin: 2vw;
+  border: 2px solid white;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+  width: 50%;
+}
+.allinput {
+  margin: 2vw;
+}
