@@ -101,7 +101,7 @@ table {
   border-radius: 30vw;
 }
 .inputloantype {
-  width: 30vw;
+  width: auto;
   background-color: rgb(215, 239, 246);
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
   border: 1.3px solid;

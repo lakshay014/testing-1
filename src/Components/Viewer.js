@@ -3,6 +3,56 @@ import MultiSelect from "react-multiple-select-dropdown-lite";
 import "react-multiple-select-dropdown-lite/dist/index.css";
 import "./Style.css";
 
+
+
+
+
+function Export2Word(){
+  console.log(11);
+   var element= "exportContent";
+   var filename="word,docx"
+  var preHtml = "<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'><head><meta charset='utf-8'><title>Export HTML To Doc</title></head><body>";
+  var postHtml = "</body></html>";
+  var html = preHtml+document.getElementById(element).innerHTML+postHtml;
+
+  var blob = new Blob(['\ufeff', html], {
+      type: 'application/msword'
+  });
+  
+  // Specify link url
+  var url = 'data:application/vnd.ms-word;charset=utf-8,' + encodeURIComponent(html);
+  
+  // Specify file name
+  filename = filename?filename+'.doc':'document.doc';
+  
+  // Create download link element
+  var downloadLink = document.createElement("a");
+
+  document.body.appendChild(downloadLink);
+  
+  if(navigator.msSaveOrOpenBlob ){
+      navigator.msSaveOrOpenBlob(blob, filename);
+  }else{
+      // Create a link to the file
+      downloadLink.href = url;
+      
+      // Setting the file name
+      downloadLink.download = filename;
+      
+      //triggering the function
+      downloadLink.click();
+  }
+  
+  document.body.removeChild(downloadLink);
+  console.log(10);
+}
+
+
+
+
+
+
+
 function Viewer() {
   const company_name = " ABC Pvt Ltd";
   const [currentDate, setcurrentDate] = useState("");
@@ -99,7 +149,7 @@ function Viewer() {
           </select> */}
         </div>
 
-        <div class="allinput">
+        <div class="allinput" >
           <b>Number of Years </b>
           <select
             class="form-select"
@@ -144,10 +194,12 @@ function Viewer() {
             // onChange={changeName}
           />
         </div>
+
+        <button onClick={Export2Word}>Export to Word</button>
       </div>
 
-      <div className="letterdata">
-        <h3 className="centerheading">On the LetterHead of Borrower</h3>
+      <div className="letterdata" id="exportContent">
+        <h3 className="centerheading" color="red">On the LetterHead of Borrower</h3>
         <div className="letterinput">
           <p id="left">{currentDate}</p>
           <p>
