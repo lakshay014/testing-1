@@ -291,7 +291,6 @@ function Viewer() {
             <li>Assist in Post transactional activities</li>
           </ul>
 
-          
             <b>Fees and Payment Term</b>
           <br/>
           <span>We agree to pay you the fees as per below terms </span>
