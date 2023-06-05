@@ -3,57 +3,51 @@ import MultiSelect from "react-multiple-select-dropdown-lite";
 import "react-multiple-select-dropdown-lite/dist/index.css";
 import "./Style.css";
 
-
-
-
-
-function Export2Word(){
+function Export2Word() {
   console.log(11);
-   var element= "exportContent";
-   var filename="word,docx"
-  var preHtml = "<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'><head><meta charset='utf-8'><title>Export HTML To Doc</title></head><body>";
+  var element = "exportContent";
+  var filename = "word,docx";
+  var preHtml =
+    "<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'><head><meta charset='utf-8'><title>Export HTML To Doc</title></head><body>";
   var postHtml = "</body></html>";
-  var html = preHtml+document.getElementById(element).innerHTML+postHtml;
+  var html = preHtml + document.getElementById(element).innerHTML + postHtml;
 
-  var blob = new Blob(['\ufeff', html], {
-      type: 'application/msword'
+  var blob = new Blob(["\ufeff", html], {
+    type: "application/msword",
   });
-  
+
   // Specify link url
-  var url = 'data:application/vnd.ms-word;charset=utf-8,' + encodeURIComponent(html);
-  
+  var url =
+    "data:application/vnd.ms-word;charset=utf-8," + encodeURIComponent(html);
+
   // Specify file name
-  filename = filename?filename+'.doc':'document.doc';
-  
+  filename = filename ? filename + ".doc" : "document.doc";
+
   // Create download link element
   var downloadLink = document.createElement("a");
 
   document.body.appendChild(downloadLink);
-  
-  if(navigator.msSaveOrOpenBlob ){
-      navigator.msSaveOrOpenBlob(blob, filename);
-  }else{
-      // Create a link to the file
-      downloadLink.href = url;
-      
-      // Setting the file name
-      downloadLink.download = filename;
-      
-      //triggering the function
-      downloadLink.click();
+
+  if (navigator.msSaveOrOpenBlob) {
+    navigator.msSaveOrOpenBlob(blob, filename);
+  } else {
+    // Create a link to the file
+    downloadLink.href = url;
+
+    // Setting the file name
+    downloadLink.download = filename;
+
+    //triggering the function
+    downloadLink.click();
   }
-  
+
   document.body.removeChild(downloadLink);
   console.log(10);
 }
 
-
-
-
-
-
-
 function Viewer() {
+    
+
   const company_name = " ABC Pvt Ltd";
   const [currentDate, setcurrentDate] = useState("");
   const [CompanyName, setCompanyName] = useState(company_name);
@@ -65,12 +59,12 @@ function Viewer() {
     { label: "Term Loan", value: "Term Loan" },
     {
       label: "Business Correspondence limits",
-      value: "Business Correspondence limits"
+      value: "Business Correspondence limits",
     },
     {
       label: "Any other mutually agreed Product",
-      value: "Any other mutually agreed Product"
-    }
+      value: "Any other mutually agreed Product",
+    },
   ];
 
   const changeDate = (event) => {
@@ -149,7 +143,7 @@ function Viewer() {
           </select> */}
         </div>
 
-        <div class="allinput" >
+        <div class="allinput">
           <b>Number of Years </b>
           <select
             class="form-select"
@@ -195,20 +189,20 @@ function Viewer() {
           />
         </div>
 
-        <button onClick={Export2Word}>Export to Word</button>
+        <button onClick={Export2Word} className="downloadbutton">Export to Word</button>
       </div>
 
-      <div className="letterdata" id="exportContent">
-        <h3 className="centerheading" color="red">On the LetterHead of Borrower</h3>
+      <div  className="letterdata" id="exportContent"   >
+        <h3 className="centerheading" style={{ marginleft:"30cm" }}>
+          On the LetterHead of Borrower
+        </h3>
         <div className="letterinput">
           <p id="left">{currentDate}</p>
           <p>
-            <b>Express Rupya - Propietor Anita Khandelwal</b>
-          </p>
-
-          <p>
-            <b>
-              A/4 Chandrika Building , Shankar Lane ,Kandivali West , Mumbai
+            <b>Express Rupya - Proprietor Anita Khandelwal</b>
+            <br />
+              <b>
+              A/4 Chandrika Building, Shankar Lane, Kandivali West, Mumbai
               -400067
             </b>
           </p>
@@ -218,8 +212,8 @@ function Viewer() {
           <p>
             <u>
               {" "}
-              Sub : Appointment Letter for Raising funds for{" "}
-              <span>{CompanyName}</span>
+              <b>Sub : Appointment Letter for Raising funds for</b> {" "}
+              <b>{CompanyName}</b>
             </u>
           </p>
 
@@ -228,84 +222,90 @@ function Viewer() {
           <p>
             <span>
               We refer to our ongoing discussions with you for providing
-              advisory services to
+              advisory services to {" "}
               <b>{CompanyName}</b>. We agree to appoint Express Rupya for
               helping us in raising funds from identified financial Institutions
-              on the Following Terms :
+              on the Following terms :
             </span>
           </p>
 
           <div className="center">
-            <table>
+            <table style={{  border: '1px solid black'}}>
               <tr>
-                <th>Particulars</th>
-                <th>Particulars</th>
+                <th style={{  border: '1px solid black'}}>Particulars</th>
+                <th style={{  border: '1px solid black'}}>Particulars</th>
               </tr>
 
               <tr>
-                <td>Facility Amount</td>
-                <td>Any</td>
+                <td style={{  border: '1px solid black'}}>Facility Amount</td>
+                <td style={{  border: '1px solid black'}}>Any</td>
               </tr>
 
               <tr>
-                <td>Tenor</td>
-                <td>Mutually agreed terms between Facility </td>
+                <td style={{  border: '1px solid black'}}>Tenor</td>
+                <td style={{  border: '1px solid black'}}>Mutually agreed terms between Facility </td>
               </tr>
 
               <tr>
-                <td>Collateral</td>
-                <td>
+                <td style={{  border: '1px solid black'}}>Collateral</td>
+                <td style={{  border: '1px solid black'}}>
                   Provider and <span>{CompanyName}</span>
                 </td>
               </tr>
 
               <tr>
-                <td>Tentative Interst range and processing fees</td>
-                <td></td>
+                <td style={{  border: '1px solid black'}}>Tentative Interst range and processing fees</td>
+                <td style={{  border: '1px solid black'}}></td>
               </tr>
             </table>
           </div>
 
-          <p>
+          
             <b>
-              we have also limited outlined the broadscope of services and agree
+              We have also limited outlined the broadscope of services and agree
               to pay the fees mentioned below on successful close of transaction
             </b>
-          </p>
+          
 
-          <p>
+            <br />
+            <br />
             {" "}
             <b>Scope of Services</b>
-          </p>
           <ul>
             <li>
-              To Introduce and coordinate with various finacial Institutions to
-              Raise Finance through {Type_of_loan} .
+              To Introduce and coordinate with various financial Institutions to
+              Raise Finance through {Type_of_loan}.
+              <br />
               {/* Term Loan / Bussiness Correspondence limits or
             any other mutually agreed product . */}
             </li>
+             <br />
             <li>
-              Obtaining a term sheet from the lenders in respect of funding
+              Obtaining a term sheet from the lenders in respect of funding  
             </li>
-            <li>Assist in negotiation process</li>
-            <li>Coordinate with various stakeholders involved</li>
+             <br />
+            <li>Assist in negotiation process  </li>
+             <br />
+            <li>Coordinate with various stakeholders involved  </li>
+             <br />
             <li>Assist in Post transactional activities</li>
           </ul>
 
-          <p>
+          
             <b>Fees and Payment Term</b>
-          </p>
+          <br/>
           <span>We agree to pay you the fees as per below terms </span>
-
-          <table>
+            <br />
+            <br />
+          <table style={{  border: '1px solid black'}}>
             <tr>
-              <th>Type of Funding</th>
-              <th>Fees</th>
-              <th>Terms of Payment</th>
+              <th style={{  border: '1px solid black'}}>Type of Funding</th>
+              <th style={{  border: '1px solid black'}}>Fees</th>
+              <th style={{  border: '1px solid black'}}>Terms of Payment</th>
             </tr>
 
             <tr>
-              <td>
+              <td style={{  border: '1px solid black'}}>
                 {Type_of_loan}
                 {/* <MultiSelect
         onChange={LoanType}
@@ -313,79 +313,79 @@ function Viewer() {
       />
               {/* Term Loan/Bussiness Correspondence limits or any other mutually */}
               </td>
-              <td>
+              <td style={{  border: '1px solid black'}}>
                 {borrowertype}
                 {/* From NBFS and private sector lenders */}
               </td>
-              <td>
+              <td style={{  border: '1px solid black'}}>
                 Within 7 days of raising the invoice. Invoice to be raised post
                 disbursement of first tranche.
               </td>
             </tr>
 
             <tr>
-              <td></td>
-              <td>
+              <td style={{  border: '1px solid black'}}></td>
+              <td style={{  border: '1px solid black'}}>
                 1 % of sanction amount (lender wise) plus applicable taxes on
                 all sanctions in 1 year
               </td>
-              <td> For 1 year</td>
+              <td style={{  border: '1px solid black'}}> For 1 year</td>
             </tr>
 
             <tr>
-              <td></td>
-              <td>
+              <td style={{  border: '1px solid black'}}></td>
+              <td style={{  border: '1px solid black'}}>
                 0.75 % of sanction amount (lender wise) plus applicable taxes on
                 all sanctions in 2 year
               </td>
-              <td> For 2 year</td>
+              <td style={{  border: '1px solid black'}}> For 2 year</td>
             </tr>
 
             <tr>
-              <td></td>
-              <td>
+              <td style={{  border: '1px solid black'}}></td>
+              <td style={{  border: '1px solid black'}}>
                 0.50 % of sanction amount (lender wise) plus applicable taxes on
                 all sanctions in 3 year
               </td>
-              <td> For 3 year</td>
+              <td style={{  border: '1px solid black'}}> For 3 year</td>
             </tr>
 
             <tr>
-              <td>
+              <td style={{  border: '1px solid black'}}>
                 {Type_of_loan}
                 {/* Term Loan/Bussiness Correspondence limits or any other mutually
               agreed product */}
               </td>
-              <td>From PSUs</td>
-              <td> For 3 year</td>
+              <td style={{  border: '1px solid black'}}>From PSUs</td>
+              <td style={{  border: '1px solid black'}}> For 3 year</td>
             </tr>
 
             <tr>
-              <td></td>
-              <td>
+              <td style={{  border: '1px solid black'}}></td>
+              <td style={{  border: '1px solid black'}}>
                 2 % of sanction amount (lender wise) plus applicable taxes on
                 all sanctions in 1 year
               </td>
-              <td> For 1 year</td>
+              <td style={{  border: '1px solid black'}}> For 1 year</td>
             </tr>
 
             <tr>
-              <td></td>
-              <td>
+              <td style={{  border: '1px solid black'}}></td>
+              <td style={{  border: '1px solid black'}}>
                 1.50 % of sanction amount (lender wise) plus applicable taxes on
                 all sanctions in 2 year
               </td>
-              <td> For 2 year</td>
+              <td style={{  border: '1px solid black'}}> For 2 year</td>
             </tr>
 
             <tr>
-              <td></td>
-              <td>
+              <td style={{  border: '1px solid black'}}></td>
+              <td style={{  border: '1px solid black'}}>
                 {" "}
                 1 % of sanction amount (lender wise) plus applicable taxes on
                 all sanctions in 3 year
               </td>
-              <td> For 3 year</td>
+              <td style={{  border: '1px solid black'}}> For 3 year</td>
             </tr>
           </table>
 
@@ -393,21 +393,21 @@ function Viewer() {
             {" "}
             We hereby agree that we will not enter into any agreement with
             lenders identified and agreed to between <b>{CompanyName}</b> and
-            Express Rupya without invloving Express Rupya for {numberofyears}{" "}
+            Express Rupya without involving Express Rupya for {numberofyears}{" "}
             {" years "}
             {/* three years */}
             from the date of this letter .
           </p>
-          <br />
+     
           <p>
             {" "}
             Both <b>{CompanyName}</b> and Express Rupya may terminate the
-            mandate by giving 90 (ninety-days) written notice to each other ,
+            mandate by giving 90 (ninety-days) written notice to each other,
             but <b>{CompanyName}</b> will be required to pay all fees which have
-            accured to EXPRESS RUPYA as per the terms mentioned above .
+            accured to EXPRESS RUPYA as per the terms mentioned above.
           </p>
           <p>
-            please find below a list of Existinf Lenders as per the terms
+            Please find below a list of Existent Lenders as per the terms
             mentioned above
           </p>
 

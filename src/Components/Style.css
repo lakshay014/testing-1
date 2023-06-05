@@ -68,12 +68,12 @@ td {
 }
 
 table {
-  /* text-align: center; */
+  text-align: center;
 }
 
 #left {
   text-align: left;
-  margin-left: 4%;
+  margin-left: 2vm;
 }
 
 .center {
@@ -123,4 +123,20 @@ table {
 }
 .allinput {
   margin: 2vw;
+}
+.downloadbutton{
+  margin-left :2vw;
+  border-radius: 2vw;
+  height: 2vw;
+  color: white;
+  background-color: black;
+  
+}
+.downloadbutton:hover{
+  margin-left :2vw;
+  border-radius: 2vw;
+  height: 2vw;
+  color: white;
+  background-color: rgb(94, 89, 89);
+  
 }
